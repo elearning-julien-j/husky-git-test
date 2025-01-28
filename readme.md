@@ -68,11 +68,59 @@ git add .
 ```sh
 git commit -m "loremipsum___"
 ```
+retour
+```
+husky - DEPRECATED
+
+Please remove the following two lines from .husky/pre-commit:
+
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+They WILL FAIL in v10.0.0
+
+Au moins un console.log est ajouté dans votre commit !
+Êtes-vous certain de continuer ?
+[o/n]>o
+⧗   input: loremipsum___
+✖   subject may not be empty [subject-empty]
+✖   type may not be empty [type-empty]
+
+✖   found 2 problems, 0 warnings
+ⓘ   Get help: https://github.com/conventional-changelog/commitlint/#what-is-commitlint
+
+husky - commit-msg script failed (code 1)
+
+```
 
 
 ## Accepté
 ```sh
 git commit -m "chore: add husky library with instructions" 
+```
+retour
+```
+husky - DEPRECATED
+
+Please remove the following two lines from .husky/pre-commit:
+
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+They WILL FAIL in v10.0.0
+
+Au moins un console.log est ajouté dans votre commit !
+Êtes-vous certain de continuer ?
+[o/n]>o
+[master (root-commit) 360b0f6] chore: add husky library with instructions
+ 7 files changed, 1366 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 .husky/commit-msg
+ create mode 100644 .husky/pre-commit
+ create mode 100644 commitlint.config.js
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 readme.md
 ```
 
 ## Envoi vers repo
