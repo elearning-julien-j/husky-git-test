@@ -1,0 +1,15 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+exec < /dev/tty
+if test $(git diff --cached | grep ^+.*console.log | wc -l) != 0
+then
+    echo "Au moins un console.log est ajouté dans votre commit !"
+    echo "Êtes-vous certain de continuer ?"
+    read -p "[o/n]>" choix
+    if test $choix != "o"
+    then
+        echo "Abandon du commit"
+        exit 1
+    fi
+fi
